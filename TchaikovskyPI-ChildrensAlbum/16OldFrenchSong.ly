@@ -12,7 +12,7 @@ ragged-last = ##f
 \header{
 % Center aligned, topmost
 title = "Old French Air"  % centered
-subtitle="Middle Voice" 
+%subtitle="Middle Voice" 
 %subsubtitle="subsubtitle"
 %instrument="lead"  % centered, below other three
 
