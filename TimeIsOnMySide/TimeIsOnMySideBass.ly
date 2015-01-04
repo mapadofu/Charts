@@ -22,7 +22,7 @@ title = "Time Is On My Side"  % centered
 %opus = 
 
 %left aligned top to bottom
-poet = "F major" % for lead sheets I like to put the key here
+poet = " " % for lead sheets I like to put the key here
 %meter = "~180 BPM" % for lead sheets I put the tempo here
 %piece = 
 }
@@ -74,8 +74,8 @@ introBass = {
   \break
 }
 chorusBass = {
+  s1*0 \mark \markup { \musicglyph #"scripts.segno" }
   \relative c {
-    
     f2.-"Chorus" f4. f8 c a |
     bes4. r8 bes b c4. c8 d e |
     f2. f4. f8 c a |
@@ -117,7 +117,8 @@ bridgeBass = {
 
 codaBass = {
   \relative c{
-    c8\coda c c d8 d d c8 c c c8 d e |
+    s1*0 \mark \markup { \musicglyph #"scripts.coda"}
+    c8 c c d8 d d c8 c c c8 d e |
     f8 f f f8 f f f8 f f f8 c a |
     bes8 bes bes bes8 bes bes c8 c c c8 d e |
     f8 f f f8 f f f8 f f f8 c a |
@@ -152,6 +153,8 @@ codaBass = {
 
 keysig={ \key e \major }
 timesig={ \numericTimeSignature \time 4/4 }
+
+\markup { \huge \bold "Intro, [Chorus-Verse]*2, Bridge, [Chorus-Verse], Coda"}
 
 \score {
   <<
