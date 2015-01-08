@@ -43,7 +43,7 @@ verseChords=\chordmode{
   c2.  bes2. |
   c2. bes2. |
   c2. bes2. |
-  c1.
+  %c1.
 }
 bridgeChords=\chordmode{
   bes1. 
@@ -164,6 +164,10 @@ timesig={ \numericTimeSignature \time 4/4 }
       \repeat volta 2 {
 	\chorusChords
 	\verseChords
+      }
+      \alternative{
+	{ c1. }
+	{ \once \set chordChanges = ##f c1. }
       }
       \bridgeChords
       \codaChords
