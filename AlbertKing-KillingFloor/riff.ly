@@ -27,7 +27,7 @@ guitartabE={
 
 
 bassA=\relative c{
-  a8 a cis cis  e e  fis fis |
+  a8 a cis cis  e e  fis e |
 }
 
 \score{
@@ -58,7 +58,7 @@ bassA=\relative c{
     \time 4/4
     \repeat percent 2 { \repeat unfold 2 \bassA }
     \transpose a d' { \repeat unfold 2 \bassA } \repeat unfold 2 \bassA
-    \transpose a e' { \bassA } \transpose a d' {\bassA} \bassA  { a,8 e8  e e  e e   e e }
+    \transpose a e' { \bassA } \transpose a d' {\bassA} {a,8 a,8 cis cis d d dis dis} |  { e8 e8  e e ~ e e   e4  }
   }
   >>
 }
