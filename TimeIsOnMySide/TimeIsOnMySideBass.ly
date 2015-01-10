@@ -176,7 +176,7 @@ timesig={ \numericTimeSignature \time 4/4 }
       \key f \major 
       \time 12/8 
       \clef "bass"
-      %\hideNotes % uncomment this to just get empty staff
+      \hideNotes % uncomment this to just get empty staff
       \introBass
       \repeat volta 2 {
 	\chorusBass
