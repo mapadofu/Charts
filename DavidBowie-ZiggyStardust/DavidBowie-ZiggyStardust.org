@@ -20,7 +20,7 @@
 
 \Large
 #+begin_example
-||: G  D | C G  Am :|| 4x 
+||: G.X.D... | C..G..Am. :|| 4x 
 #+end_example
 
 * Verse 1
@@ -35,7 +35,7 @@
 * Chorus
 \Large
 #+begin_example
-||: A  G | FEFEFEFG  :||  3x
+||: A  G | FCFCFCFG  :||  3x
  | D     | E          |
 #+end_example
 
