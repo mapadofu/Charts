@@ -35,9 +35,11 @@
 * Chorus
 \Large
 #+begin_example
-||: A  G | FCFCFCFG  :||  3x
+||: A  G | FeFeFeFe  :||  3x
  | D     | E          |
 #+end_example
+
+(~FeFe...~ means ~F Fmaj7/E F Fmaj7/E...~)
 
 * Intro Riff 2x
 
@@ -45,13 +47,15 @@
 
 * Chorus
 
-* Intro Riff 4x
-
-* Out
+* Out 
 \Large
 #+begin_example
-|  C     |  G    |
+||: G.X.D... | C..G..Am. :|| 3x 
+
+| G.X.D...| C------------ G----------- |
+
 #+end_example
+(Intro riff 4x, fermata on final measure)
 
 
 * Scripts :noexport:
