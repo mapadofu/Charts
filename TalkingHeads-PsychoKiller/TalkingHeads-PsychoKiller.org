@@ -1,0 +1,259 @@
+#+OPTIONS: toc:nil \n:nil
+
+#+LaTeX_CLASS: LeadMemo
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{enumerate}
+#+LATEX_HEADER: \usepackage{units}
+#+LATEX_HEADER: \usepackage[section]{placeins}
+#+LATEX_HEADER: \usepackage{hyperref}
+#+LATEX_HEADER: \usepackage[cm]{fullpage}
+#+LATEX_HEADER: \songtitle{ Psycho Killer  }
+#+LATEX_HEADER: \composer{ Talking Heads }
+#+LATEX_HEADER: \songdate{ 1977  }
+#+LATEX_HEADER: \tonickey{ A  }
+#+LATEX_HEADER: \tempo{ Driven   }
+#+LATEX_HEADER: \timesignature{ 4/4 } 
+
+* Intro
+\Large
+#+begin_example
+||: A       | A    /EG :||
+#+end_example
+\small
+2x (bass), 2x (+drums), 2x (+guitar), 
+
+* Verse 1
+\Large
+#+begin_example
+||: A       | A    /EG :||    4x
+#+end_example
+
+* Chorus 1
+\Large
+#+begin_example
+||: F     | G      | Am      |        ||
+||  F     | G      | C       |       :||
+||  F     | G      |
+#+end_example
+
+* Link
+\Large
+#+begin_example
+||: A       | A    /EG :||    2x
+#+end_example
+
+* Verse + Chorus
+
+* French Bridge
+\Large
+#+begin_example
+||: Bm     |         | C         |         ||
+||: Bm     |         | C         |         ||
+|   A      |         | G         |         ||
+#+end_example
+
+* Spoken Verse + Chorus
+
+* Out
+Vamp on A
+
+\newpage
+
+
+* Overall 
+- other than 3 guitars on album version, no extra stuff -- backing vocals, tambourine, synth pads etc.
+- The Name of This Band... version has extended intro, only 2 guitars
+- Stop Making Sense has significantly different version
+
+** Drums
+- uniform closed highhats on quarter notes, only 
+  break to do symbol crashes
+- uniform snare on  1234
+- uniform kick on 1234
+- really simple, driving throughout song`
+** Guitar
+- a bit of division of labor: one (or two) does arps during verse and intro, 
+  other does more muted/scratch guitar
+
+* Intro
+- 2x (bass)
+- 2x +drums, guitar chimes
+- 2x +rhythm guitar 
+
+* Verse 1
+- verse just flows right into the chorus
+- arpeggios, left channel (2 guitars)
+- mostly scratch, except EG, guitar on right
+- uniform closed highhat on quarters
+
+* Chorus 1
+- right guitar - whole notes
+- left guitar - rhythm
+- no guitar under fafafafa
+
+* Link
+
+* Verse 2
+
+* Chorus
+
+* French Bridge
+- all guitars in sync, staccato notes/chords first 8 bars
+- then open up to let ring on latter part
+
+* Kinda Verse
+- more spoken word
+
+* Chorus
+
+* Out
+- Kick on 1,3, snare on 2,4 at start, still 1234 hats (maybe opened a bit)
+- goes to snare on 1234 towards climax
+
+* Scripts :noexport:
+
+** lilyheader -- insert the lilypond header information
+#+name: lilyheader()
+#+begin_src org
+  \version "2.16.2"
+  \include "english.ly"
+  \paper{
+  indent=0\mm
+  line-width=170\mm
+  oddFooterMarkup=##f
+  ohhHeaderMarkup=##f
+  bookTitleMarkup=##f
+  scoreTitleMakrup=##f
+  raggedRight=##t
+  }
+  
+#+end_src
+
+** define_makevoicing  -- helper function to allow writing out custom cord voices
+#+name: define_makevoicing()
+#+begin_src org
+makevoicing = #(define-scheme-function (parser location m) (ly:music?)
+                    (define-music-function (parser location d) (ly:duration?)
+                      (map-some-music
+                        (lambda (m)
+                          (and (ly:duration? (ly:music-property m 'duration))
+                               (begin
+                                  (set! (ly:music-property m 'duration) d)
+                                  m)))
+                        (ly:music-deep-copy m))))
+ #+end_src
+
+* Examples :noexport:
+
+** Rhythm 
+#+LATEX: \linebreak
+#+ATTR_LaTeX: width=17cm 
+#+begin_src lilypond :file erhythm.png :noweb yes :exports results
+    <<lilyheader>>
+    <<define_makevoicing>> 
+    opene = \makevoicing < e b e' gs' b' e'' > 
+    opend = \makevoicing < d' a' d'' fs'' >
+  
+    eChords={ e4 e4 d4 d8 d8  | e8 e8 e8 d8 r8 d8 d8 d8 }
+
+    \new Score<<
+      \new ChordNames{
+        \set noChordSymbol = ##f 
+        \set chordChanges = ##t 
+        \chordmode { \eChords }
+      }
+      \new Staff{
+        \new Voice \with {
+          \consists "Pitch_squash_engraver"
+        } {
+          \key e \major
+          \improvisationOn  
+           \eChords
+        }
+      } % end staff
+    >> % end score
+#+end_src
+
+- ~A~ Chord sections involve same pattern between ~A~ and ~G~ chords.
+- Turnaround bars are ~-&2&3---|-&2&3---~ and then back to the ~E~ rhythm
+
+
+
+** Riff
+- Standard, tremelo/vibrato?, surfy reverb
+- Riff goes something like this:
+#+LATEX: \linebreak
+#+ATTR_LaTeX: width=17cm 
+#+begin_src lilypond :file eriff.png :noweb yes :exports results
+  <<lilyheader>>
+    
+  
+  \new Score<<
+    \new ChordNames {
+      \chordmode{
+        e1 e1 e1 e1 | \break
+        a1 a1 a1 a1 |
+      }
+    }
+    \new Staff{
+        \key e \major
+        r1 | r2 r8 b8 d'8 ds'8 | e'4 e'4 d'4 d'8 d'8 | e'8 e'8 e'8 b4 b8 b8 b8  | \break
+        r1 | r2 r8 e8 g8 gs8 | a4 a4 g4 e8 g8 | a8 a8 a8 e8 ~ e2 |
+    } % end staff
+  >> % end score
+#+end_src
+
+#+RESULTS:
+[[file:eriff.png]]
+
+- Two bar loop version
+#+LATEX: \linebreak
+#+ATTR_LaTeX: width=17cm 
+#+begin_src lilypond :file eloop.png :noweb yes :exports results
+  <<lilyheader>>
+  \new Score<<
+    \new ChordNames {
+      \chordmode{
+        s1 e1 e1 | \break
+      }
+    }
+    \new Staff{
+        \key e \major
+        s2 s8 b8 d'8 ds'8 \repeat volta 2 {  e'4 e'4 d'4 d'8 d'8 | e'8 e'8 e'8 b4 b8 d'8 ds'8   | } \break
+    } % end staff
+  >> % end score
+#+end_src
+
+#+RESULTS:
+[[file:eloop.png]]
+
+
+** Solo
+
+#+LATEX: \linebreak
+#+ATTR_LaTeX: width=17cm 
+#+begin_src lilypond :file solo.png :noweb yes :exports results
+  <<lilyheader>>
+  \new Score<<
+    \new ChordNames {
+      \chordmode{
+        e1 e1 e1 e1 | \break
+        a1 a1 a1 a1 | \break
+        e1 e1 e1 e1 | \break
+        b1 a1 e1 e1 | \break
+      }
+    }
+    \new Staff{
+        \key e \major
+         \relative c' { e4 g4 a4 bf4 ~ | bf8 bf4. bf8 a8 g8 e8   |   s1 |  s1 |}
+         s1 s1 s1 s1 |
+         \relative c'' {s1 s1 s1 r2 r8 d8 b8 a8 |
+         b8 a8 g8 e8 ~ e8 a8 g8 e8  |  g8 e8 d8 b8~b8  b8 d8 ds8 | e4 e4 e4 e4  | e8 e8 r8 e8 r8 e8 e8 e8 }
+    } % end staff
+  >> % end score
+#+end_src
+
+#+RESULTS:
+[[file:solo.png]]
+
+
