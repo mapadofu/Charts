@@ -17,7 +17,7 @@
 * Intro
 \Large
 #+begin_example
-||: A       | A    /EG :||
+||: Am      | Am    Co/G :||
 #+end_example
 \small
 2x (bass), 2x (+drums), 2x (+guitar), 
@@ -25,7 +25,7 @@
 * Verse 1
 \Large
 #+begin_example
-||: A       | A    /EG :||    4x
+||: A      | A      /EG :||    4x
 #+end_example
 
 * Chorus 1
@@ -39,7 +39,7 @@
 * Link
 \Large
 #+begin_example
-||: A       | A    /EG :||    2x
+||: Am      | Am     Co/G :||    2x
 #+end_example
 
 * Verse + Chorus
@@ -47,15 +47,14 @@
 * French Bridge
 \Large
 #+begin_example
-||: Bm     |         | C         |         ||
-||: Bm     |         | C         |         ||
+|   Bm     |         | G         |         ||
+|   Bm     |         | G         |         ||
 |   A      |         | G         |         ||
 #+end_example
 
 * Spoken Verse + Chorus
 
-* Out
-Vamp on A
+* Out: Vamp on A
 
 \newpage
 
@@ -68,7 +67,6 @@ Vamp on A
 ** Drums
 - uniform closed highhats on quarter notes, only 
   break to do symbol crashes
-- uniform snare on  1234
 - uniform kick on 1234
 - really simple, driving throughout song`
 ** Guitar
@@ -85,12 +83,13 @@ Vamp on A
 - arpeggios, left channel (2 guitars)
 - mostly scratch, except EG, guitar on right
 - uniform closed highhat on quarters
+- backbeat snare
 
 * Chorus 1
 - right guitar - whole notes
 - left guitar - rhythm
 - no guitar under fafafafa
-
+- snare on 1234
 * Link
 
 * Verse 2
