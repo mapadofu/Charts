@@ -42,8 +42,18 @@ verseChords=\chordmode{
 }
 
 verseBass={
-  \repeat unfold 4 { s4 s4 s4 s4 } \break
-  \repeat unfold 4 { s4 s4 s4 s4 }
+  \relative c' {
+    g2 ~ g8 d8 g16 d16 c8 |
+    b4 ~ b8. b16 b'8 b8 g16 a16 b8 |
+    c4 ~ c8 g c b c cis |
+    d4\glissando e8\glissando d8 ~ d8 b8 a4 |
+  }
+  \relative c' {
+    g2 g8 d g a |
+    e'2 e8 b e16 d16 b8 |
+    a4. e8 a8 a g16 e d8
+    c4. g'8 c,8 c8 ~ c4
+  }
 }
 
 chorusChords=
@@ -58,7 +68,7 @@ chorusBass={
     f8 e f e f e f\glissando g_\markup{3x}
   }
   \break
-  s1
+  d8 a8 d'4 d'8 b8 a8 g8 |
   e8 e e e e e e e
 }
 
