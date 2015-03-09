@@ -1,4 +1,4 @@
-\version "2.18.0"
+\version "2.18.2"
 \paper{
  indent = 0.1\cm
 ragged-bottom=##f
@@ -119,5 +119,6 @@ staffSetup={
     }
     >>
   \layout{ }
+  \midi{}
 }
 
