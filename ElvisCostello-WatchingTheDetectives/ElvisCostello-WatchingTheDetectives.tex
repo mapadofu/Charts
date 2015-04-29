@@ -1,0 +1,125 @@
+\documentclass{LeadMemo}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{enumerate}
+\usepackage{units}
+\usepackage[section]{placeins}
+\usepackage{hyperref}
+\usepackage[cm]{fullpage}
+\usepackage{parcolumns}
+\usepackage[table]{xcolor}
+\usepackage{alltt}
+\usepackage{multirow}
+%\usepackage[update,prepend]{epstopdf}
+\usepackage[T1]{fontenc}
+\usepackage{fancyvrb}
+\usepackage{mathtools}
+\usepackage[pdf]{pstricks}
+\usepackage{epstopdf}
+\epstopdfsetup{update} % only regenerate pdf files when eps file is newer
+
+\songtitle{ Watching The Detectives }
+\composer{ Elvis Costello }
+\songdate{ 1977  }
+\tonickey{ Amin }
+\tempo{ Swing noir }
+\timesignature{ 4/4 }
+
+\newcommand{\rpt}{%
+        \raisebox{.2ex}{:}%
+        \raisebox{-.4ex}{\rule{.1ex}{2.5ex}\,\rule{.3ex}{2.5ex}}}
+\newcommand{\rvrpt}{%
+        \raisebox{-.4ex}{\rule{.3ex}{2.5ex}\,\rule{.1ex}{2.5ex}}%
+        \raisebox{.2ex}{:}}
+%\newcommand{\mbar}{%
+%        \raisebox{-.4ex}{\rule{.1ex}{2.5ex}}}
+
+% another commmand
+\newcommand{\chordstxt}[1]{%
+    \large{\textbf{\textsf{#1}}}%
+} 
+
+\title{OrgLeadSheet}
+\author{David McNamara}
+\date{\today}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={LaTeX}
+}
+
+\begin{document}
+\maketitle
+%\label{title^}
+%\label{composer}
+%\label{date}
+%\label{key}
+%\label{tempo}
+
+
+\DefineShortVerb{\!}
+
+\def\arraystretch{3}
+\arrayrulecolor{gray!20}
+\begin{tabular}[h]{ p{0.2\textwidth}  p{0.75\textwidth}  }
+    \huge\textbf{Intro \vfill} & \chordstxt{\rvrpt~Am~~~~~~~|~~~~~~~~~~|~F~~~~~~~~|~~~~~~~~~~\rpt}  \large{3x} \\%
+
+   \huge\textbf{Verse \vfill } & \chordstxt{\rvrpt~Am~~~~~~~|~~~~~~~~~~|~F~~~~~~~~|~~~~~~~~~~\rpt}  \large{3x} \\
+
+   \huge\textbf{Chorus } & \chordstxt{|~C~~~~~~~~|~~~~~~~~~~|~G~~~~~~~~|~~~~~~~~~~||~C~~~~~~~~|~~~~~~~~~~|~G~~~Em~~~|~F~~~D~~~~||} \\
+       \vfill            &  \chordstxt{|~Am~~~~~~|~~~~~~~G~~|~F~~~~~~~~|$\,^2_4\,$~f~g~||~C~~~~~~~~|~~~~~~~~~~|~G~~~~~~~~~~~|~~~~~~~~~~~~~||} \\
+      \vfill & \\
+    \huge\textbf{Verse \vfill } & \chordstxt{\rvrpt~Am~~~~~~~|~~~~~~~~~~|~F~~~~~~~~|~~~~~~~~~~\rpt}  \large{5x} \\
+   \huge\textbf{Chorus \vfill} &  as before \\
+
+    \huge\textbf{Verse' } & \chordstxt{\rvrpt~Am~~~~~~~|~~~~~~~~~~|~F~~~~~~~~|~~~~~~~~~~\rpt}  \large{3x} \\ %2 = 2 beat bar
+                          \vfill &   \chordstxt{|~Am~~~~~~~|~~~~~~~~~~|~F~N.C.~~~|$\,^2_4$~~~~~|} \\ %1112  11 \\
+                          \vfill & \\ 
+   \huge\textbf{Chorus' } &  \chordstxt{|~C~~~~~~~~|~~~~~~~~~~|~G~~~~~~~~|~~~~~~~~~~||~C~~~~~~~~|~~~~~~~~~~|~G~~~~~~~~|~~~~~~~~~~~~||} \\
+       \vfill            &  \chordstxt{|~Am~~~~~~|~~~~~~~G~~|~F~~~~~~~~|$\,^2_4\,$~f~g~||~C~~~~~~~~|~~~~~~~~~~|~G~~~~~~~~~~~|~~~~~~~~~~~~~||} \\
+
+    \huge\textbf{Out \vfill } & As verse, fade  \\
+
+%|~~~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~|~~~~~~~~~~|
+\end{tabular}
+\def\arraystretch{4.0}
+\end{document}
+
+\huge\textbf{Intro\vfill}         & \large\verb!  |  E    |        |         |           |!\\
+    \hline
+    \huge\textbf{Verse}  &\large\verb! ||: E    |        |  A      |  E       :||!\\
+    \hline
+    \huge\textbf{Chorus} &  \begin{minipage}[t]{\textwidth}
+    \large\verb!  |  B    | E      |  B      |  E        |!\\ 
+    \large\verb!  |  B    | E      |  A      |  B        |!\\
+    \end{minipage}
+    \\ 
+    \hline
+    \huge\textbf{Link\vfill}             &\large\verb!  | E     |        |!\\
+    \hline
+    \huge\textbf{Verse}  &  \\
+    \hline
+    \huge\textbf{Chorus}  &  \\
+    \hline
+    \huge\textbf{Bridge}  &\large\verb! ||: E    | A      | B       | E        :||!\\
+    \hline
+    \huge\textbf{Link\vfill}  &  (still in E) \\
+    \hline
+    \huge\textbf{Verse}  &\large\verb! ||: F#   |        |  B      |  F#      :||!\\
+    \hline
+    \huge\textbf{Chorus} &  \begin{minipage}[t]{\textwidth}
+    \large\verb!  |  C#   | F#     |  C#     |  F#       |!\\ 
+    \large\verb!  |  C#   | F#     |  B      |  C#       |!\\
+    \end{minipage}
+    \\ 
+    \hline
+    \huge\textbf{Link\vfill}             &\large\verb!  | F#    |        |!\\
+    \hline
+    \huge\textbf{Verse} & \\
+    \hline
+    \huge\textbf{Chorus} & \\
+    \hline
+    \huge\textbf{Outro}  &\large\verb! ||: F#   | B      | C#      | F#       :||! (4x, 16 bars)\\
+
+
