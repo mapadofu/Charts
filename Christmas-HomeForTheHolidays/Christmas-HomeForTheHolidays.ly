@@ -151,9 +151,14 @@ fullchords = {
 
 \score {
   <<
-    \new ChordNames \fullchords
+    \new ChordNames {
+      \set chordChanges = ##t
+      \fullchords
+    }
+    
     \new FretBoards {
       \override FretBoards.FretBoard.size = #'0.6
+      \set chordChanges = ##t
       \fullchords
     }
     \new Staff {
