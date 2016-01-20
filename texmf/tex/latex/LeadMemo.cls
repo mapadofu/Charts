@@ -89,7 +89,7 @@
    \ifthenelse{ \equal{\@timesignature}{\relax}}
    {}
    {
-     , in \@timesignature 
+     \@timesignature 
    }
 }
 \\
