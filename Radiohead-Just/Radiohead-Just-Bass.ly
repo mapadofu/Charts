@@ -68,7 +68,7 @@ chorusChords = \chordmode {
 interludeChords = \repeat unfold 2 \introChords
 
 bridgeChords=\chordmode{
-  e2:5 d:5 cis1:5 e2 d:5 gis1:5
+  e2:5 d:5 cis1:5 e2 d:5 cis1:5
 }
 
 outChords=\chordmode{
@@ -95,9 +95,10 @@ apart= \relative c {  % = Verse
   s1*0\mark \markup {\musicglyph #"scripts.segno"}  % bar 10,28,47
   a,4 a8. a16 ~ a8 a8 a8 a8 |
   aes4 aes8. aes16 ~ aes8 aes8 aes8 aes8 |
-  ees'8 c g' bes8 ~ bes c8 d4 |
+  %ees'8 c g' bes8 ~ bes c8 d4 |
+  ees'8^"TBR" c g' f8 ~ f8 ees c4
 
-  a,8 a a16 b8 c16 ~ c8 b8 a4 |
+  a8 a a16 b8 c16 ~ c8 b8 a4 |
   aes8 aes aes16 bes8 c16 ~ c8 bes8 aes4 |
   g'8 g g e ges8 ges ges ees |
   f1 |
@@ -108,13 +109,12 @@ bpart= \relative c {
   c4 c4 \glissando ges8 ges ges e8 |
   f4 f8.  f16 ~ f16  f16 a8 bes8 b8
   c4 c4 \glissando ges16 g16 ges8 ges e8 |
-  f4 f8. f16 ~ f16 f16 a8 bes8 b8
+  f4 f8. f16 ~ f16 f16 a8 bes8\mark \markup {al Coda}  b8 
 
 }
 tag=\relative c {
   \set Score.markFormatter=#format-mark-box-alphabet
-  s1*0 \mark #9 
-  c4 c8 d ees ees ees4 |  % 21, 39
+  c4\mark #9 c8 d ees ees ees4 |  % 21, 39
   d8 ees e f r8 a, bes b |
   c4 c8 d ees ees ees4 |  
   d8 ees e f r8 a, bes b |
@@ -123,9 +123,9 @@ tag=\relative c {
 bridge=\relative c {
     s1*0\mark #3
     e8 e16 e e8 e d8 d16 d d8 d |  % 43
-    cis8 cis16 cis cis8 cis g'16^\markup{ TBR } g g g a16 a a a |
+    cis8 cis16 cis cis8 cis cis16^\markup{ TBR } cis cis cis cis16 cis cis cis|
     e8 e16 e e8 e d8 d16 d d8 d |
-    cis8 cis16 cis cis8 cis g'16^\markup{ TBR } g g g g16 g g g^\markup{ D.S. al Coda } \bar "||"
+    cis8 cis16 cis cis8 cis g'16^\markup{ TBR } cis cis cis cis16 cis cis cis^\markup{ D.S. al Coda } \bar "||"
 }
 
 
@@ -142,7 +142,7 @@ ending=\relative c {
   c4 c8 d ees ees ees4 |
   d8 c a f8 ~ f8 a'8 bes bes | \break % 65
 
-  c,4 c8 d ees ees ees4 |  %bar 66
+  c,4 ^\markup{"Not album outro?"}c8 d ees ees ees4 |  %bar 66
   d8 ees e f r8 a, bes b |
   c4 c8 d ees ees ees4 |
   d8 c a f8 ~ f4  g8 aes | \break
